@@ -12,6 +12,11 @@ import {
 import blob from '../../images/blob-scene-haikei.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGoogle } from '@fortawesome/free-brands-svg-icons'
+import bcrypt from 'bcryptjs'
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
+
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const PASS_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
@@ -61,6 +66,26 @@ const Register = () => {
 
     const handleSubmit = async (e: SubmitEvent) => {
         e.preventDefault()
+
+        if (pass !== matchPass) {
+            setErrMsg('Passwords do not match')
+        }
+
+        const hashedPassword = await bcrypt.hash(pass, 10)
+
+        try {
+            await prisma.user.create({
+                data: {
+                    email,
+                    password: hashedPassword,
+                    company
+                }
+            })
+            console.log('User Created')
+        } catch (err) {
+            console.error(err)
+            setErrMsg("failed to create user")
+        }
     }
 
     return (
@@ -148,10 +173,18 @@ const Register = () => {
                             onFocus={() => setMatchFocus(true)}
                             onBlur={() => setMatchFocus(false)}
                         />
-                        <span className={matchFocus && !validMatch ? 'block text-sm text-red-600' : 'hidden'}>
+                        <span
+                            className={
+                                matchFocus && !validMatch
+                                    ? 'block text-sm text-red-600'
+                                    : 'hidden'
+                            }
+                        >
                             Must matchthe first password input field
                         </span>
-                        <span ref={errRef} className={errMsg ? '' : ''}>{errMsg}</span>
+                        <span ref={errRef} className={errMsg ? '' : ''}>
+                            {errMsg}
+                        </span>
                     </FormControl>
 
                     <Button
