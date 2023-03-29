@@ -14,9 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 import bcrypt from 'bcryptjs'
 import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
-
+import { signIn } from 'next-auth/react'
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const PASS_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
@@ -70,21 +68,6 @@ const Register = () => {
         if (pass !== matchPass) {
             setErrMsg('Passwords do not match')
         }
-
-        const hashedPassword = await bcrypt.hash(pass, 10)
-
-        try {
-            await prisma.user.create({
-                data: {
-                    email,
-                    password: hashedPassword,
-                }
-            })
-            console.log('User Created')
-        } catch (err) {
-            console.error(err)
-            setErrMsg("failed to create user")
-        }
     }
 
     return (
@@ -99,7 +82,7 @@ const Register = () => {
             <div className='absolute bg-white w-[400px] max-h-fit z-1 left-[50%] -translate-x-[50%] top-[25%] rounded-lg text-center p-5'>
                 <Typography variant='h4'>Sign Up</Typography>
                 <div className='p-3 w-full flex flex-col justify-between'>
-                    <FormControl>
+                    <FormControl onSubmit={handleSubmit} >
                         <InputLabel htmlFor='emailAddress'>
                             Email Address
                         </InputLabel>
@@ -179,7 +162,7 @@ const Register = () => {
                                     : 'hidden'
                             }
                         >
-                            Must matchthe first password input field
+                            Must match the first password input field
                         </span>
                         <span ref={errRef} className={errMsg ? '' : ''}>
                             {errMsg}
@@ -200,6 +183,7 @@ const Register = () => {
                         <Button
                             variant='contained'
                             className='w-full text-black border-solid border-[1px] hover:bg-[#a344ec] hover:text-white'
+                            onClick={() => signIn()}
                         >
                             Sign Up
                         </Button>
