@@ -78,7 +78,6 @@ const Register = () => {
                 data: {
                     email,
                     password: hashedPassword,
-                    company
                 }
             })
             console.log('User Created')
