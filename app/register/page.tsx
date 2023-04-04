@@ -12,7 +12,7 @@ import blob from '../../images/blob-scene-haikei.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 import axios from 'axios'
-import { signIn } from 'next-auth/react'
+
 
 // const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 // const PASS_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
