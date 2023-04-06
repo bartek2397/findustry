@@ -12,8 +12,14 @@ import {
 } from '@mui/material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGoogle } from '@fortawesome/free-brands-svg-icons'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '../api/auth/[...nextauth]'
 
-const login = () => {
+
+export default async function Login () {
+
+    const session = await getServerSession(authOptions)
+    
     return (
         <div>
             <Image
@@ -69,4 +75,3 @@ const login = () => {
     )
 }
 
-export default login
