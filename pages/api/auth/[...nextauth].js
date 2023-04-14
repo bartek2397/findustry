@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import prisma from '../../../prisma/client'
-import Credentials from 'next-auth/providers/credentials'
+import CredentialsProvider from 'next-auth/providers/credentials'
 import { compare } from 'bcryptjs'
 
 const adapter = PrismaAdapter(prisma)
@@ -9,7 +9,7 @@ const adapter = PrismaAdapter(prisma)
 export const authOptions = {
     adapter: adapter,
     providers: [
-        Credentials({
+        CredentialsProvider({
             id: 'credentials',
             name: 'Credentials',
             credentials: {

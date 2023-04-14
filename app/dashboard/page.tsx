@@ -1,7 +1,7 @@
 'use client'
 
 import { getServerSession } from "next-auth"
-import { authOptions } from "../api/auth/[...nextauth]"
+import { authOptions } from "../../pages/api/auth/[...nextauth]"
 import { redirect } from "next/navigation"
 
 
