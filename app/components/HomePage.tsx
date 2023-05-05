@@ -3,7 +3,11 @@
 import { TextField } from "@mui/material";
 import Navbar from "./Navbar";
 
-const HomePage = () => {
+import getCurrentUser from "../actions/getCurrentUser";
+
+const HomePage = async () => {
+
+    const currentUser = await getCurrentUser()
     return (
         <div>
             <Navbar />

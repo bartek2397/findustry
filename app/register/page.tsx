@@ -12,12 +12,14 @@ import blob from '../../images/blob-scene-haikei.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGoogle } from '@fortawesome/free-brands-svg-icons'
 import axios from 'axios'
+import { useRouter } from 'next/navigation'
 
 
 // const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 // const PASS_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
 
 const Register = () => {
+    const router = useRouter()
 
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
@@ -30,6 +32,8 @@ const Register = () => {
             company,
             password
         })
+
+        router.push('/')
     } catch (error) {
         console.log(error)
     }
