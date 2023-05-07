@@ -1,6 +1,6 @@
 'use client'
 
-import { ButtonUnstyled } from '@mui/base'
+import Button from './Button'
 import logo from '../../images/compass-rose-297758_1280.png'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -24,12 +24,12 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <ul className='flex justify-around w-[20%]'>
-                    <ButtonUnstyled className='text-slate-200 hover:underline'>
+                    <Button className='btn-primary' label='Sign In'>
                         <Link href='/login'>Sign In</Link>
-                    </ButtonUnstyled>
-                    <ButtonUnstyled className='rounded-lg bg-[#657ff1] py-2 px-8 text-slate-100'>
+                    </Button>
+                    <Button className='btn-secondary' label='Sign Up'>
                         <Link href='/register'>Register</Link>
-                    </ButtonUnstyled>
+                    </Button>
                 </ul>
             </div>
         </div>
