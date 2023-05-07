@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .btn-primary {
-    background-color: #08a8c4
 
-  };
-  .btn-secondary {
-    background-color: #c4c108;
+  .btn-primary {
+    @apply bg-[#0b9bd9]
   }
-}
+  .btn-secondary {
+    @apply bg-[#d9ce0b]
+  }
+
