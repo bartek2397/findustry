@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <div>
       <Navbar />
-      <section className='flex flex-col max-w-[1440px] m-auto h-[100vh]'>
+      <section className='flex flex-col max-w-[1440px] m-auto h-screen'>
         <Image
           src={firstSectionBg}
           alt='Background Image'
@@ -30,14 +30,14 @@ const HomePage = () => {
         
         
       </section>
-      <section className="flex flex-col max-w-[1440px]">
-        {/* <Image
+      <section className="flex flex-col max-w-[1440px] bg-[#8d2bd7] z-10">
+        <Image
             src={secondSectionBg}
             alt="SecondBg"
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', opacity: '18%', top: '100%', zIndex: -10 }}
             fill
             className="relative"
-        /> */}
+        />
       </section>
     </div>
   );
