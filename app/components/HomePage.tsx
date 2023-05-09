@@ -6,7 +6,10 @@ import firstSectionBg from "../../images/christopher-burns-Wiu3w-99tNg-unsplash.
 import secondSectionBg from "../../images/crystal-kwok-XUEdfpPIhXg-unsplash.jpg";
 import Heading from "./Heading";
 import Input from "./inputs/Input";
-import {RxMagnifyingGlass} from 'react-icons/rx'
+import { SlMagnifier } from "react-icons/sl";
+import { BsTelephone } from "react-icons/bs";
+
+import { AiOutlineComment } from "react-icons/ai";
 
 const HomePage = () => {
   return (
@@ -57,27 +60,58 @@ const HomePage = () => {
             />
           </div>
           <div className='w-[50%] flex flex-col justify-between'>
-            <span className="">
-              <RxMagnifyingGlass />
-            </span>
-              <Heading
-                titleStyle='text-4xl text-zinc-700'
-                subtitleStyle='text-2xl text-white'
-                title="Find branch you're looking for or create your own profile!"
-                subtitle='You need materials or a subcontractor? Sign up right away and find the best supliers!'
-              />
-            <Heading
-              titleStyle='text-4xl text-zinc-700'
-              subtitleStyle='text-2xl text-white'
-              title='Contact your contractor'
-              subtitle='Lorem Ipsum dolor sit amet'
-            />
-            <Heading
-              titleStyle='text-4xl text-zinc-700'
-              subtitleStyle='text-2xl text-white'
-              title='Leave an opinion about the product you received'
-              subtitle='It will help us adjust the finding for you next time!'
-            />
+            <div className=' relative flex '>
+              <div className='w-[70px] h-[70px] absolute left-0 top-5 bg-gray-500 rounded-full'>
+                <span className="absolute top-5 left-5">
+                  <SlMagnifier size={30} color="#fff" />
+                </span>
+              </div>
+              <div className='mx-24'>
+                <Heading
+                  titleStyle='text-4xl text-zinc-700'
+                  subtitleStyle='text-2xl text-white'
+                  title="Find branch you're looking for or create your own profile!"
+                  subtitle='You need materials or a subcontractor? Sign up right away and find the best supliers!'
+                />
+              </div>
+            </div>
+            <div className=' relative flex '>
+              <div className='w-[70px] h-[70px] absolute left-0 top-5 bg-gray-500 rounded-full'>
+                <span className="absolute top-5 left-5">
+                  <BsTelephone size={30} color="#fff" />
+                </span>
+                <span className="w-[100px] border-t-[3px] border-dashed rotate-90 absolute -top-[100%] -right-4">
+
+                </span>
+              </div>
+              <div className='mx-24 mt-10'>
+                <Heading
+                  titleStyle='text-4xl text-zinc-700'
+                  subtitleStyle='text-2xl text-white'
+                  title='Contact your contractor'
+                  subtitle='
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu condimentum orci. Sed et feugiat nisl. '
+                />
+              </div>
+            </div>
+            <div className='relative flex '>
+              <div className='w-[70px] h-[70px] absolute left-0 top-10 bg-gray-500 rounded-full'>
+                <span className="absolute top-5 left-5">
+                  <AiOutlineComment size={30} color="#fff" />
+                </span>
+                <span className="w-[100px] border-t-[3px] border-dashed rotate-90 absolute -top-[100%] -right-4">
+
+                </span>
+              </div>
+              <div className='mx-24 my-10'>
+                <Heading
+                  titleStyle='text-4xl text-zinc-700'
+                  subtitleStyle='text-2xl text-white'
+                  title='Leave an opinion about the product you received'
+                  subtitle='It will help us adjust the finding for you next time!'
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
