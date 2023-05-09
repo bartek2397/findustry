@@ -59,8 +59,8 @@ const HomePage = () => {
               subtitle='to look for specific branch that suits your needs.'
             />
           </div>
-          <div className='w-[50%] flex flex-col justify-between'>
-            <div className=' relative flex '>
+          <ul className='w-[50%] flex flex-col justify-between'>
+            <li className=' relative flex '>
               <div className='w-[70px] h-[70px] absolute left-0 top-5 bg-gray-500 rounded-full'>
                 <span className="absolute top-5 left-5">
                   <SlMagnifier size={30} color="#fff" />
@@ -74,8 +74,8 @@ const HomePage = () => {
                   subtitle='You need materials or a subcontractor? Sign up right away and find the best supliers!'
                 />
               </div>
-            </div>
-            <div className=' relative flex '>
+            </li>
+            <li className=' relative flex '>
               <div className='w-[70px] h-[70px] absolute left-0 top-5 bg-gray-500 rounded-full'>
                 <span className="absolute top-5 left-5">
                   <BsTelephone size={30} color="#fff" />
@@ -93,8 +93,8 @@ const HomePage = () => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu condimentum orci. Sed et feugiat nisl. '
                 />
               </div>
-            </div>
-            <div className='relative flex '>
+            </li>
+            <li className='relative flex '>
               <div className='w-[70px] h-[70px] absolute left-0 top-10 bg-gray-500 rounded-full'>
                 <span className="absolute top-5 left-5">
                   <AiOutlineComment size={30} color="#fff" />
@@ -111,8 +111,8 @@ const HomePage = () => {
                   subtitle='It will help us adjust the finding for you next time!'
                 />
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </section>
     </div>
