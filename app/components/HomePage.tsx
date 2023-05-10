@@ -37,36 +37,30 @@ const HomePage = () => {
           <Input id='searchBar' label='Search for your needs...' />
         </div>
       </section>
-      <section className='flex flex-col z-10'>
-        <Image
-          src={secondSectionBg}
-          alt='SecondBg'
-          style={{
-            objectFit: "cover",
-            opacity: "18%",
-            top: "100%",
-            zIndex: -10,
-          }}
-          fill
-        />
-        <span className='block w-full h-screen opacity-[0.7] absolute z-10 top-[100%] bg-[#8d2bd7]'></span>
-        <div className='max-w-[1440px] my-36 m-auto flex justify-between items-center z-30'>
-          <div className='w-[50%]'>
+      <section className='flex flex-col w-full h-[80vh]'>
+        <div className="bg-[url('images\crystal-kwok-XUEdfpPIhXg-unsplash.jpg')]">
+
+        </div>
+        <div className='w-full h-[80%] opacity-[0.7] absolute z-10 top-[100%] bg-[#8d2bd7]'>
+
+        </div>
+        <div className='max-w-[1440px] my-28 m-auto flex justify-between items-center z-30'>
+          <div className='w-[45%]'>
             <Heading
               titleStyle='text-4xl text-zinc-700'
               subtitleStyle='text-2xl text-white'
               title='FinDustry is a industry search enginge'
-              subtitle='to look for specific branch that suits your needs.'
+              subtitle='that helps you look for specific branch that suits your needs.'
             />
           </div>
           <ul className='w-[50%] flex flex-col justify-between'>
             <li className=' relative flex '>
               <div className='w-[70px] h-[70px] absolute left-0 top-5 bg-gray-500 rounded-full'>
-                <span className="absolute top-5 left-5">
-                  <SlMagnifier size={30} color="#fff" />
+                <span className='absolute top-5 left-5'>
+                  <SlMagnifier size={30} color='#fff' />
                 </span>
               </div>
-              <div className='mx-24'>
+              <div className='mx-28'>
                 <Heading
                   titleStyle='text-4xl text-zinc-700'
                   subtitleStyle='text-2xl text-white'
@@ -76,15 +70,13 @@ const HomePage = () => {
               </div>
             </li>
             <li className=' relative flex '>
-              <div className='w-[70px] h-[70px] absolute left-0 top-5 bg-gray-500 rounded-full'>
-                <span className="absolute top-5 left-5">
-                  <BsTelephone size={30} color="#fff" />
+              <div className='w-[70px] h-[70px] absolute left-0 top-7 bg-gray-500 rounded-full'>
+                <span className='absolute top-5 left-5'>
+                  <BsTelephone size={30} color='#fff' />
                 </span>
-                <span className="w-[100px] border-t-[3px] border-dashed rotate-90 absolute -top-[100%] -right-4">
-
-                </span>
+                <span className='w-[150px] border-t-[3px] border-dashed rotate-90 absolute -top-[130%] -right-10'></span>
               </div>
-              <div className='mx-24 mt-10'>
+              <div className='mx-28 mt-10'>
                 <Heading
                   titleStyle='text-4xl text-zinc-700'
                   subtitleStyle='text-2xl text-white'
@@ -96,14 +88,12 @@ const HomePage = () => {
             </li>
             <li className='relative flex '>
               <div className='w-[70px] h-[70px] absolute left-0 top-10 bg-gray-500 rounded-full'>
-                <span className="absolute top-5 left-5">
-                  <AiOutlineComment size={30} color="#fff" />
+                <span className='absolute top-5 left-5'>
+                  <AiOutlineComment size={30} color='#fff' />
                 </span>
-                <span className="w-[100px] border-t-[3px] border-dashed rotate-90 absolute -top-[100%] -right-4">
-
-                </span>
+                <span className='w-[100px] border-t-[3px] border-dashed rotate-90 absolute -top-[100%] -right-4'></span>
               </div>
-              <div className='mx-24 my-10'>
+              <div className='mx-28 my-10'>
                 <Heading
                   titleStyle='text-4xl text-zinc-700'
                   subtitleStyle='text-2xl text-white'
