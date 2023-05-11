@@ -7,7 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      
+      backgroundImage: {
+        'secondSection': "url('../images/crystal-kwok-XUEdfpPIhXg-unsplash.jpg')",
+      }
     },
   },
   plugins: [],

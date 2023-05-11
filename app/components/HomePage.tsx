@@ -37,14 +37,9 @@ const HomePage = () => {
           <Input id='searchBar' label='Search for your needs...' />
         </div>
       </section>
-      <section className='flex flex-col w-full h-[80vh]'>
-        <div className="bg-[url('images\crystal-kwok-XUEdfpPIhXg-unsplash.jpg')]">
-
-        </div>
-        <div className='w-full h-[80%] opacity-[0.7] absolute z-10 top-[100%] bg-[#8d2bd7]'>
-
-        </div>
-        <div className='max-w-[1440px] my-28 m-auto flex justify-between items-center z-30'>
+      <section className='flex flex-col h-[80vh] relative  '>
+        <span className='block w-full h-[100%] opacity-[0.6] absolute -z-10 bg-[#8d2bd7]'></span>
+        <div className='max-w-[1440px] my-28 m-auto flex justify-between items-centerz-1'>
           <div className='w-[45%]'>
             <Heading
               titleStyle='text-4xl text-zinc-700'
