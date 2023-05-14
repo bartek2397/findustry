@@ -8,6 +8,7 @@ import Input from "./inputs/Input";
 
 import Second from "./homePageSections/Second";
 import Third from "./homePageSections/Third";
+import Fourth from "./homePageSections/Fourth";
 
 const HomePage = () => {
   return (
@@ -37,6 +38,7 @@ const HomePage = () => {
       </section>
       <Second />
       <Third />
+      <Fourth />
     </div>
   );
 };
