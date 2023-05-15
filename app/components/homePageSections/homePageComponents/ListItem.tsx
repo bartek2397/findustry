@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Heading from "../../Heading";
 import Image from "next/image";
 import sketch from "../../../../images/isaac-smith-6EnTPvPPL6I-unsplash.jpg";
 import offer from '../../../../images/scott-graham-OQMZwNd3ThU-unsplash.jpg'
+
+import { useAnimate, usePresence } from "framer-motion";
 
 export const list = [
   {
@@ -79,20 +81,28 @@ export const list = [
 ];
 
 const ListItem = () => {
-  const [active, setActive] = useState<number>();
+  const [active, setActive] = useState<number>(1);
 
+  const [isPresent, safeToRemove] = usePresence()
+  const [scope, animate] = useAnimate()
+
+  useEffect(() => {
+         animate('div', {y: [300, 0]}, {duration: 0.5})
+    
+  }, [active] )
+  
   return (
     <div>
       <ul className='flex justify-between pr-64 pt-12 text-xl'>
         {list.map((item) => {
           return (
             <li
+            key={item.id}
               className={`${
                 active === item.id ? "text-black" : "text-neutral-500"
               }`}
             >
               <button
-                key={item.id}
                 onClick={() => {
                   if (active === item.id) {
                     setActive(0);
@@ -114,12 +124,14 @@ const ListItem = () => {
           );
         })}
       </ul>
-        {list.map((item) => {
+        <div ref={scope}>
+          {list.map((item) => {
           
-          return (
-            <div className={`h-full w-full flex justify-between items-center pt-52 ${active === item.id ? item.bodyContent : 'hidden'}`}>{item.bodyContent}</div>
-          )
-        })}
+            return (
+              <div className={`h-full w-full flex justify-between items-center pt-52 ${active === item.id ? item.bodyContent : 'hidden'}`}>{item.bodyContent}</div>
+            )
+          })}
+        </div>
     </div>
   );
 };
