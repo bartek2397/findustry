@@ -18,9 +18,6 @@ const Fourth = () => {
         />
         <div>
             <ListItem />
-            {/* <ListItem title="Technology analysis of CAD files"></ListItem>
-            <ListItem title='Generate automatic offer'></ListItem>
-            <ListItem title='Integration with applications'></ListItem> */}
         </div>
       </div>
     </section>
