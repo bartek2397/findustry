@@ -9,6 +9,7 @@ import Input from "./inputs/Input";
 import Second from "./homePageSections/Second";
 import Third from "./homePageSections/Fourth";
 import Fourth from "./homePageSections/Third";
+import Footer from "./homePageSections/Footer";
 
 const HomePage = () => {
   return (
@@ -39,6 +40,7 @@ const HomePage = () => {
       <Second />
       <Fourth />
       <Third />
+      <Footer />
     </div>
   );
 };
