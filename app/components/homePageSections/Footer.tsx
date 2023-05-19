@@ -18,10 +18,10 @@ const Footer = () => {
             <span>email Address@address.pl</span>
           </div>
         </div>
-        <div className="w-[30%] h-[100%] pt-8">
+        <div className="w-[30%] h-[100%] pt-10">
             <Heading title="Menu" />
-            <div className="flex justify-between text-lg">
-                <div className="flex flex-col justify-end">
+            <div className="flex justify-between text-lg pt-8 h-[50%]">
+                <div className="flex flex-col justify-between">
                     <Link href='/'>FinDustry Platform</Link>
                     <Link href='/'>Privacy Policy</Link>
                 </div>
@@ -33,12 +33,13 @@ const Footer = () => {
         </div>
         <div className="pt-8">
           <Heading title="Technical Support" />
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between h-[50%] text-lg pt-10">
             <Link href='/'>Contact</Link>
             <Link href='/'>Phone Number</Link>
           </div>
         </div>
       </div>
+        <span className="block h-[1px] max-w-[1440px] m-auto bg-[#a1a1a1]"></span>
       
     </footer>
   );
