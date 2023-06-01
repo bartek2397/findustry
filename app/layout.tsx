@@ -1,5 +1,6 @@
 import './globals.css'
 import { Montserrat } from 'next/font/google'
+import { ClerkProvider } from '@clerk/nextjs'
 
 export const metadata = {
   title: 'Create Next App',
@@ -17,12 +18,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={montserrat.className}>
-        <div>
-          {children}
-        </div>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={montserrat.className}>
+          <div>
+            {children}
+          </div>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }

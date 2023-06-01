@@ -83,13 +83,13 @@ export const list = [
 const ListItem = () => {
   const [active, setActive] = useState<number>(1);
 
-  const [isPresent, safeToRemove] = usePresence()
-  const [scope, animate] = useAnimate()
+  // const [isPresent, safeToRemove] = usePresence()
+  // const [scope, animate] = useAnimate()
 
-  useEffect(() => {
-         animate('div', {y: [300, 0]}, {duration: 0.5})
+  // useEffect(() => {
+  //        animate('div', {y: [300, 0]}, {duration: 0.5})
     
-  }, [active] )
+  // }, [active] )
   
   return (
     <div>
@@ -124,7 +124,9 @@ const ListItem = () => {
           );
         })}
       </ul>
-        <div ref={scope}>
+        <div 
+        // ref={scope}
+        >
           {list.map((item) => {
           
             return (
