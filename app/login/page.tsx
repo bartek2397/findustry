@@ -11,6 +11,9 @@ import { signIn } from "next-auth/react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import Input from "../components/inputs/Input";
+import Heading from "../components/Heading";
+
+import { BsCheck2Circle } from "react-icons/bs";
 
 const Login = () => {
   const router = useRouter();
@@ -47,13 +50,14 @@ const Login = () => {
 
   return (
     <div>
-      <Image
-        src={blob}
-        alt='BackgroundImage'
-        style={{ objectFit: "cover" }}
-        fill
-        className='relative'
-      />
+      <aside className="w-[20%] bg-[#8d2bd7] h-screen ml-0 p-16">
+        <Heading titleStyle="text-white" title='Findustry App helps you to:' />
+        <ul>
+          <li>
+            <BsCheck2Circle size={30} color="#fff" />
+          </li>
+        </ul>
+      </aside>
       <div className='absolute bg-white w-[400px] max-h-fit z-1 left-[50%] -translate-x-[50%] top-[30%] rounded-lg text-center p-5'>
         <Typography variant='h4'>Sign In</Typography>
         <div className='p-3 w-full flex flex-col justify-between'>
