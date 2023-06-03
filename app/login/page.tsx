@@ -50,13 +50,28 @@ const Login = () => {
 
   return (
     <div>
-      <aside className="w-[20%] bg-[#8d2bd7] h-screen ml-0 p-16">
+      <aside className="w-[20%] bg-[#8d2bd7] h-screen flex flex-col items-center ml-0 p-8">
         <Heading titleStyle="text-white" title='Findustry App helps you to:' />
-        <ul>
-          <li>
-            <BsCheck2Circle size={30} color="#fff" />
-          </li>
-        </ul>
+        <div>
+          <ul className="flex flex-col justify-between list-none h-[40%] p-4 m-0">
+            <li className="flex items-start gap-3 text-white">
+                <BsCheck2Circle size={25} color='#fff'></BsCheck2Circle>
+                <span>Finding the contractor to make detail products</span>
+            </li>
+            <li className="flex items-start gap-3 text-white">
+                <BsCheck2Circle size={25} color='#fff'></BsCheck2Circle>
+                <span>Finding new customers for services you provide</span>
+            </li>
+            <li className="flex items-start gap-3 text-white">
+                <BsCheck2Circle size={25} color='#fff'></BsCheck2Circle>
+                <span>Speed up the process from creating an offer to delivery</span>
+            </li>
+            <li className="flex items-start gap-3 text-white">
+                <BsCheck2Circle size={25} color='#fff'></BsCheck2Circle>
+                <span>Automize the process of creating an offer</span>
+            </li>
+          </ul>
+        </div>
       </aside>
       <div className='absolute bg-white w-[400px] max-h-fit z-1 left-[50%] -translate-x-[50%] top-[30%] rounded-lg text-center p-5'>
         <Typography variant='h4'>Sign In</Typography>

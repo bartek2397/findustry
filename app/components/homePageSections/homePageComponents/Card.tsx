@@ -5,7 +5,7 @@ import Heading from "../../Heading";
 
 interface CardProps {
     title: string;
-    subtitle: string;
+    subtitle?: string;
 }
 
 const Card: React.FC<CardProps> = ({ title, subtitle }) => {
