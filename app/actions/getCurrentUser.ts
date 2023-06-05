@@ -1,4 +1,4 @@
-import { getServerSession } from "next-auth";
+import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "@component/pages/api/auth/[...nextauth]";
 import prisma from '../../prisma/client'
@@ -32,7 +32,7 @@ export default async function getCurrentUser() {
               currentUser.emailVerified?.toISOString() || null,
         }
 
-    } catch (error) {
+    } catch (error: any) {
         return null
     }
 }

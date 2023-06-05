@@ -31,10 +31,10 @@ const Navbar = () => {
         </div>
         <ul className='flex justify-around w-[20%]'>
           <Button className='btn-primary' label='Sign In'>
-            <Link href='/sign-in/sign-in'></Link>
+            <Link href='login'></Link>
           </Button>
           <Button className='btn-secondary' label='Sign Up'>
-            <Link href='/sign-up/sign-up'></Link>
+            <Link href='/register'></Link>
           </Button>
         </ul>
       </div>

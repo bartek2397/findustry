@@ -1,10 +1,8 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import blob from "../../images/blob-scene-haikei.svg";
-import { Typography, TextField, InputLabel, Button } from "@mui/material";
+import { Typography, TextField, InputLabel } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { signIn } from "next-auth/react";
@@ -12,6 +10,7 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import Input from "../components/inputs/Input";
 import Heading from "../components/Heading";
+import Button from "../components/Button";
 
 import { BsCheck2Circle } from "react-icons/bs";
 
@@ -50,37 +49,43 @@ const Login = () => {
 
   return (
     <div>
-      <aside className="w-[20%] bg-[#8d2bd7] h-screen flex flex-col items-center ml-0 p-8">
-        <Heading titleStyle="text-white" title='Findustry App helps you to:' />
-        <div>
-          <ul className="flex flex-col justify-between list-none h-[40%] p-4 m-0">
-            <li className="flex items-start gap-3 text-white">
-                <BsCheck2Circle size={25} color='#fff'></BsCheck2Circle>
-                <span>Finding the contractor to make detail products</span>
+      <aside className="w-[20%] bg-[#8d2bd7] h-screen flex flex-col items-start mt-0 p-8">
+        <Heading titleStyle="text-white pl-4" title='Findustry App will help you to:' />
+          <ul className="flex flex-col justify-between list-none h-[30%] p-4 m-0 mb-0">
+            <li className="flex items-start gap-4 text-white mb-4">
+                <BsCheck2Circle className='flex-shrink-0' size={25} color='#fff'></BsCheck2Circle>
+                <span>Find the contractor to make detail products</span>
             </li>
-            <li className="flex items-start gap-3 text-white">
-                <BsCheck2Circle size={25} color='#fff'></BsCheck2Circle>
-                <span>Finding new customers for services you provide</span>
+            <li className="flex items-start gap-4 text-white mb-4">
+                <BsCheck2Circle className='flex-shrink-0' size={25} color='#fff'></BsCheck2Circle>
+                <span>Find new customers for services you provide</span>
             </li>
-            <li className="flex items-start gap-3 text-white">
-                <BsCheck2Circle size={25} color='#fff'></BsCheck2Circle>
+            <li className="flex items-start gap-4 text-white mb-4">
+                <BsCheck2Circle className='flex-shrink-0' size={25} color='#fff'></BsCheck2Circle>
                 <span>Speed up the process from creating an offer to delivery</span>
             </li>
-            <li className="flex items-start gap-3 text-white">
-                <BsCheck2Circle size={25} color='#fff'></BsCheck2Circle>
+            <li className="flex items-start gap-4 text-white">
+                <BsCheck2Circle className='flex-shrink-0' size={25} color='#fff'></BsCheck2Circle>
                 <span>Automize the process of creating an offer</span>
             </li>
           </ul>
-        </div>
+          <div className="p-4 flex justify-between">
+            <Button className="text-white border-solid border-[1px] rounded-none border-white" label="Sign Up Here!">
+              <Link href='/register' />
+            </Button>
+            <Button className="text-white font-semibold" label="Details here">
+              <Link href='/'></Link>
+            </Button>
+          </div>
       </aside>
-      <div className='absolute bg-white w-[400px] max-h-fit z-1 left-[50%] -translate-x-[50%] top-[30%] rounded-lg text-center p-5'>
+      <div className='absolute bg-white w-[600px] max-h-fit z-1 left-[50%] top-[15%] rounded-lg text-center p-5'>
         <Typography variant='h4'>Sign In</Typography>
-        <div className='p-3 w-full flex flex-col justify-between'>
+        <div className='p-12 w-full flex flex-col justify-between border-solid border-[1px] border-gray-300 rounded-sm'>
           <Input
             id='email'
             label='Email Address'
-            disabled={isLoading}
             register={register}
+            disabled={isLoading}
             errors={errors}
             required
           />
@@ -88,34 +93,30 @@ const Login = () => {
             id='password'
             label='Password'
             type="password"
-            disabled={isLoading}
             register={register}
+            disabled={isLoading}
             errors={errors}
             required
           />
 
           <Button
-            variant='text'
+            label="Sign in with Google"
             className='mt-5 text-black border-solid border-[1px] hover:bg-gray-300'
-            color='secondary'
           >
             <span className='m-2 text-xl'>
               <FontAwesomeIcon icon={faGoogle} />
             </span>{" "}
-            Sign in with Google
           </Button>
           <div className='w-full flex flex-col justify-between items-center mt-5'>
             <Button
+            label="Sign In"
               onClick={handleSubmit(onSubmit)}
-              variant='contained'
               className='w-full text-black border-solid border-[1px] hover:bg-[#a344ec] hover:text-white'
-            >
-              Sign In
-            </Button>
+            />
             <span className='text-sm'>
               Don't have an account?{" "}
-              <Button variant='text' className='text-xs'>
-                <Link href='/register'>Sign Up!</Link>
+              <Button label="Sign Up!" className='text-xs'>
+                <Link href='/register'></Link>
               </Button>
             </span>
           </div>
