@@ -6,12 +6,13 @@ import { Typography, TextField, InputLabel } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { signIn } from "next-auth/react";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import Input from "../components/inputs/Input";
 import Heading from "../components/Heading";
 import Button from "../components/Button";
 
+import { FieldValues } from "../components/inputs/Input";
 import { BsCheck2Circle } from "react-icons/bs";
 
 const Login = () => {
@@ -46,6 +47,7 @@ const Login = () => {
       }
     });
   };
+  console.log(errors)
 
   return (
     <div>
@@ -81,23 +83,23 @@ const Login = () => {
       <div className='absolute bg-white w-[600px] max-h-fit z-1 left-[50%] top-[15%] rounded-lg text-center p-5'>
         <Typography variant='h4'>Sign In</Typography>
         <div className='p-12 w-full flex flex-col justify-between border-solid border-[1px] border-gray-300 rounded-sm'>
-          <Input
-            id='email'
-            label='Email Address'
-            register={register}
-            disabled={isLoading}
-            errors={errors}
-            required
-          />
-          <Input
-            id='password'
-            label='Password'
-            type="password"
-            register={register}
-            disabled={isLoading}
-            errors={errors}
-            required
-          />
+        <Input
+        id="email"
+        label="Email"
+        disabled={isLoading}
+        register={register}  
+        errors={errors}
+        required
+      />
+      <Input
+        id="password"
+        label="Password"
+        type="password"
+        disabled={isLoading}
+        register={register}
+        errors={errors}
+        required
+      />
 
           <Button
             label="Sign in with Google"

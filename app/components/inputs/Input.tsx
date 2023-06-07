@@ -1,38 +1,45 @@
-"use client";
+'use client';
 
-import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
+import { 
+  FieldErrors, 
+  UseFormRegister 
+} from "react-hook-form";
+
+export type FieldValues = {
+  email: string;
+  password: string;
+}
 
 interface InputProps {
   id: string;
   label: string;
   type?: string;
   disabled?: boolean;
-  register: UseFormRegister<FieldValues>;
   required?: boolean;
-  errors?: FieldErrors;
+  register: UseFormRegister<FieldValues>,
+  errors: FieldErrors
 }
 
 const Input: React.FC<InputProps> = ({
   id,
   label,
-  type = "text",
-  disabled,
+  type = "text", 
+  disabled, 
   register,
   required,
   errors,
 }) => {
   return (
-    <div className='w-full relative'>
+    <div className="w-full relative">
       <input
         id={id}
         disabled={disabled}
         {...register(id, { required })}
+        placeholder=" "
         type={type}
-        placeholder=' '
         className={`
-          peer
           w-full
-          m-2
+          mb-4
           p-4
           pt-6 
           font-light 
@@ -43,34 +50,28 @@ const Input: React.FC<InputProps> = ({
           transition
           disabled:opacity-70
           disabled:cursor-not-allowed
-          ${
-            errors?.[id]
-              ? "border-rose-500 focus:border-rose-500"
-              : "border-neutral-300 focus:border-black"
-          }
+          ${errors[id] ? 'border-rose-500' : 'border-neutral-300'}
+          ${errors[id] ? 'focus:border-rose-500' : 'focus:border-black'}
         `}
       />
-      <label
+      <label 
         className={`
           absolute 
           text-md
           duration-150 
           transform 
-          -translate-y-3
+          -translate-y-3 
           top-5
-          left-0
+          left-5 
           z-10 
-          pl-4
           origin-[0] 
-          peer-placeholder-shown:scale-100 
-          peer-placeholder-shown:translate-y-0 
-          peer-focus:scale-75
-          peer-focus:-translate-y-4
-          ${errors?.[id] ? "text-rose-500" : "text-zinc-400"}
+          ${errors[id] ? 'text-rose-500' : 'text-zinc-400'}
         `}
-      >{label}</label>
+      >
+        {label}
+      </label>
     </div>
-  );
-};
-
+   );
+}
+ 
 export default Input;
